@@ -1,3 +1,6 @@
+import 'package:flutterSlidy/app/pages/splash/splash_page.dart';
+
+import 'pages/splash/splash_controller.dart';
 import 'package:flutterSlidy/app/modules/cac_login/cac_login_module.dart';
 
 import 'app_controller.dart';
@@ -11,12 +14,14 @@ import 'modules/cac/cac_login/cac_login_module.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        $SplashController,
         $AppController,
       ];
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, module: HomeModule()),
+        ModularRouter('/home', module: HomeModule()),
+        ModularRouter(Modular.initialRoute, child: (_, args) => SplashPage()),
         ModularRouter('/login', module: CacLoginModule()),
       ];
 
