@@ -1,7 +1,7 @@
+
 import 'package:flutterSlidy/app/pages/splash/splash_page.dart';
 
 import 'pages/splash/splash_controller.dart';
-import 'package:flutterSlidy/app/modules/cac_login/cac_login_module.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -14,6 +14,8 @@ import 'modules/cac/cac_login/cac_login_module.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        $AuthController,
+        $AuthControllerController,
         $SplashController,
         $AppController,
       ];
